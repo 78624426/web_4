@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        function f1() {
+            open("test1.html","","width=300px,height=200px");
+        }
+        function f2() {
+            open("test2.html","","width=300px,height=200px");
+        }
+        function f3() {
+            var w=open("test2.html","","width=300px,height200px,left=200px,top=300px");
+            var a=setTimeout(function () {
+                w.close();
+            },3000);
+            //clearTimeout(a);
+        }
+
+        function mv(){
+            var obj=document.getElementById("d");
+            //obj.style.left=parseInt(obj.style.left)+50+"px";
+            var x=Math.floor(Math.random()*100);
+            var y=Math.floor(Math.random()*100);
+            obj.style.left=x+"px";
+            obj.style.top=y+"px";
+        }
+
+        function f4() {
+            var task=setInterval(mv,500);
+            setTimeout(function () {
+                clearInterval(task);
+            },3000);
+        }
+    </script>
+</head>
+<!--<body onload="f1();" onunload="f2();">-->
+<body >
+    <a href="javascript:;" onclick="f3();">超链接打开</a>
+    <div id="d" style="left:0px;top:0px;width:30px;height:30px;background-color: red; position:relative;"></div>
+    <a href="javascript:;" onclick="f4();">移动</a>
+    <h1>this is bom编程</h1>
+</body>
+</html>
