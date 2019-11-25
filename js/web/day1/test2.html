@@ -3,9 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script>
+        function f() {
+            if(confirm("你确定要离开吗？")){
+                var msg=prompt("请填写你离开的原因，方便我们更好的为您服务:","广告太多?");
+                alert(msg);
+                close();
+            }
+        }
+    </script>
 </head>
 <body>
     <h1>this is test2.html</h1>
-
+    <button onclick="f();">关闭</button>
 </body>
 </html>
