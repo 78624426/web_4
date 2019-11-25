@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        function f1() {
+            //通过id获取标签对象
+            var a=document.getElementById("abc");
+            a=document.getElementsByName("n1");
+            a=document.getElementsByTagName("input");
+            a=document.getElementsByClassName("a1");
+            //console.log(a[0].value,a[1].value);
+            a=document.getElementsByTagName("form");
+            //a[1].innerHTML='<h1>hello</h1>';
+            //console.log(a[1].innerHTML);
+            a=document.all.n1;
+            a=document.form2.n1;
+            console.log(a.value);
+        }
+    </script>
+</head>
+<body>
+    <form action="#" name="form1" id="aa">
+        <input name="n1" class="a1" placeholder="form1.n1" value="look at my clothes"><br>
+        <input name="n2"><br>
+    </form>
+    <form action="#" name="form2">
+        fjdksal;fdsjkl;djsk
+        <input name="n1" class="a1" id="abc" placeholder="form2.n1">
+    </form>
+    <a href="javascript:;" onclick="f1();">
+        <font color="red" size="29">点击</font>
+    </a>
+
+
+</body>
+</html>
