@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function r1() {
+            console.log(navigator.userAgent);
+        }
+        function r2() {
+           //history.back();
+            history.go(-2);
+        }
+        
+        function r3() {
+            //history.forward();
+            history.go(1);
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="浏览信息" onclick="r1();"><br>
+    <input type="button" value="上一页" onclick="r2();"><br>
+    <input type="button" value="下一页" onclick="r3();"><br>
+    <input type="button" value="链接" onclick="r4();"><br>
+</body>
+</html>
