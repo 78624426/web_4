@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        table,th,td{
+            border:1px solid green;
+            border-collapse:collapse;
+        }
+    </style>
+
+    <script>
+        function selectAll() {
+            var emps=document.getElementsByName("e");
+            for(var i=0;i<emps.length;i++){
+               emps[i].checked=all.checked;
+            }
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <th><input type="checkbox" id="all" onclick="selectAll();"></th>
+            <th>编号</th><th>姓名</th><th>工资</th>
+        </tr>
+        <tr>
+            <td><input type="checkbox"  name="e"></td>
+            <td>1</td><td>a1</td><td>3000</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="e"></td>
+            <td>2</td><td>a2</td><td>4000</td>
+        </tr>
+    </table>
+</body>
+</html>

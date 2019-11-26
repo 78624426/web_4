@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function selectAll() {
+            var inputs=document.getElementsByTagName("input");
+            for(var i in inputs){
+                inputs[i].checked=true;
+            }
+        }
+        function disSelectAll() {
+            var inputs=document.getElementsByTagName("input");
+            for(var i in inputs){
+                inputs[i].checked=false;
+            }
+        }
+        function reversal() {
+            var inputs=document.getElementsByTagName("input");
+            for(var i in inputs){
+                inputs[i].checked=!inputs[i].checked;
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="checkbox">
+    <input type="checkbox">
+    <input type="checkbox">
+    <input type="checkbox">
+    <button onclick="selectAll();">全选</button>
+    <button onclick="disSelectAll();">全不选</button>
+    <button onclick="reversal();">反选</button>
+</body>
+</html>
