@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        onload=function () {
+            var s="DA";
+            var reg=/[abc]/;//只要s中包含abc中任意一个字符就返回true
+            reg=/^[abc]/;//只要s中首字符包含abc中任意一个字符就返回true
+            reg=/^[abc]$/;//字符串中只能是abc中任意一个字符，且长度为1
+            reg=/^\w{1,}$/;
+            reg=/a/i;
+
+            console.log(reg.test(s));
+            s="asdfjhafdska";
+            reg=/a/g;
+            s=s.replace(reg,"X");
+            console.log(s);
+            /*
+            身份证号：18位或17位后加一x或X
+            * */
+        };
+    </script>
+</head>
+<body>
+
+</body>
+</html>
