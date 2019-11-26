@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function f() {
+            var obj=document.createElement("div");
+            var text=document.createTextNode("hello");
+            obj.appendChild(text);
+
+            //方法1：在a标签内部添加div
+            //var a1=document.getElementById("a1");
+            //a1.appendChild(obj);
+
+            //方法2：在body中的最后一个子标签之后追加div
+            //b.appendChild(obj);
+
+            //方法3：在body中的a1之前插入div
+            //b.insertBefore(obj,a1);
+
+            //方法4：用obj替换a1标签
+            //b.replaceChild(obj,a1);
+
+            //方法5：删除a1标签
+            //b.removeChild(a1);
+            //a1.remove();
+
+            console.log("innerHTML:"+b.innerHTML,"innerText:"+b.innerText,"outerHTML:"+b.outerHTML);
+
+            //方法6：直接编辑innerHTML
+            //b.innerHTML=b.innerHTML+"<div>hello</div>";
+            b.innerText=b.innerText+"<div>hello</div>";
+
+
+        }
+    </script>
+</head>
+<body id="b">
+    <a href="javascript:;" id="a1" onclick="f();">test</a>
+
+</body>
+</html>
