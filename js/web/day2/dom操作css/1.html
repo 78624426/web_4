@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        function f() {
+            var u1=document.getElementById("u1");
+            u1.style.color="green";
+            var i3=document.getElementById("i3");
+            i3.className="c";
+        }
+    </script>
+    <style>
+        .c{
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" onclick="f()" value="查询"><br>
+    <ul id="u1">
+        <li>item1</li>
+        <li>item2</li>
+        <li  id="i3">item3</li>
+        <li>item1</li>
+        <li>item1</li>
+    </ul>
+</body>
+</html>

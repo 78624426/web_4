@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var o;
+        onload=function () {
+            o=document.getElementById("i3");
+        };
+        function f1(obj) {
+            alert(obj.innerText);
+            obj.parentNode.className="";
+            //获取li节点
+            //1.获取某个节点的全部子节点
+            var arr=obj.parentNode.childNodes;
+            //2.获取标签名为li的所有节点
+            arr=document.getElementsByTagName("li");
+            arr=obj.parentNode.getElementsByTagName("li");
+            arr=document.getElementById("u1").getElementsByTagName("li");
+
+            for(i=0;i<arr.length;i++){
+                arr[i].className="";
+            }
+
+            obj.className="c";
+
+        }
+    </script>
+    <style>
+        .c{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <ul id="u1">
+        <li>item1</li>
+        <li>item2</li>
+        <!--注释-->
+        <li id="i3">item3</li>
+        <li>item4</li>
+        <li>item5</li>
+    </ul>
+    <a href="javascript:;" onclick="f1(o);">当前节点</a>
+    <a href="javascript:;" onclick="f1(o.parentNode);">父节点</a>
+    <a href="javascript:;" onclick="f1(o.previousSibling.previousSibling.previousSibling.previousSibling);">上一节点</a>
+    <a href="javascript:;" onclick="f1(o.nextSibling.nextSibling);">下一节点</a>
+    <a href="javascript:;" onclick="f1(o.parentNode.firstChild.nextSibling);">第一个节点</a>
+    <a href="javascript:;" onclick="f1(o.parentNode.lastChild.previousSibling);">最后一个节点</a>
+</body>
+</html>
