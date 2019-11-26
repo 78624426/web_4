@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .s1{
+            background-color: red;
+        }
+    </style>
+    <script>
+        function fo(obj) {
+            obj.className="";
+            msg.innerHTML="";
+        }
+
+        function check() {
+            if(user.value==""){
+                user.className="s1";
+                msg.innerHTML="用户名不能为空!";
+                return false;
+            }
+
+            if(pass.value.length<6){
+                pass.className="s1";
+                msg.innerHTML="密码长度不能小于6";
+                return false;
+            }
+
+            var reg=/^1[356789][0-9]{9}$/;
+            if(!reg.test(phone.value)){
+                phone.className="s1";
+                msg.innerHTML="手机号码错误!";
+                return false;
+            }
+
+            return true;
+        }
+        function bl() {
+            alert("你离开了...");
+        }
+    </script>
+</head>
+<body style="text-align: center;">
+    <div id="d1">
+        <h1>注册</h1>
+    </div>
+
+    <form  action="2.html" onsubmit="return check();">
+        <input name="username" id="user" onfocus="fo(this)"><br>
+        <input type="password" name="password" id="pass" onfocus="fo(this);"><br>
+        <input name="phone" id="phone" onfocus="fo(this);"><br>
+        <input onblur="bl();">
+
+        <input type="submit" value="注册">
+        <div id="msg" style="text-align: center;"></div>
+    </form>
+
+</body>
+</html>
