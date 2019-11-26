@@ -1,0 +1,42 @@
+<html>
+	<body>
+		<table border="1" cellpadding="10" cellspacing="0">
+			<tr>
+				<td>姓名</td>
+				<td>性别</td>
+				<td>年龄</td>
+				<td>操作</td>
+			</tr>
+		</table>
+		<input type="button" value="添加" onclick="add()"/>
+	</body>
+	<head>
+		<script type="text/javascript">
+			function add(){
+				var infoStr = prompt("请输入：");
+				var infoArr = infoStr.split(",");
+				var table = document.getElementsByTagName("table")[0];
+				console.info(infoArr);
+				var tr = document.createElement("tr");
+				for(var i = 0; i < infoArr.length; i++){
+					var td = document.createElement("td");
+					td.innerHTML = infoArr[i];
+					tr.appendChild(td);
+				}
+				var input = document.createElement("input");
+				var td = document.createElement("td");
+				input.setAttribute("type", "button");
+				input.setAttribute("value", "删除");
+				input.setAttribute("onclick", "deleteOne(this)");
+				td.appendChild(input);
+				tr.appendChild(td);
+				table.appendChild(tr);
+				
+			}
+			
+			function deleteOne(obj){
+				obj.parentNode.parentNode.parentNode.removeChild(obj.parentNode.parentNode);
+			}
+		</script>
+	</head>
+</html>
