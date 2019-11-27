@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../jquery.js"></script>
+    <style>
+        .color{
+            background-color: #e00;
+        }
+    </style>
+    <script>
+        $(function () {
+           //$("div p:first").addClass("color");
+           //$("div p:last").addClass("color");
+            // $("div p:eq(1)").addClass("color");
+            //$("div p:even").addClass("color");
+            $("div p:odd").addClass("color");
+            $("#a1").click(function () {
+                $("div p").removeClass("color");
+                var p=$("div p:odd");
+                //p.css("background-color","blue");
+                p.css("font-size");
+                p.css({"background-color":"purple","height":"100px"});
+            });
+        });
+    </script>
+</head>
+<body>
+    <p>hello</p>
+    <div>
+        <p class="color">1</p>
+        <p>2</p>
+        <p>3</p>
+    </div>
+    <a href="javascript:;" id="a1">删除样式</a>
+</body>
+</html>
