@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*重点掌握onchange*/
+        function f1() {
+            var index=s1.selectedIndex;
+            var option=s1.options[index];
+            console.log("你选择的内容："+option.innerText+",value:"+option.value);
+        }
+        function f2() {
+            //掌握前两种方法
+            //方法一：通过dom修改选项
+            var o=document.createElement("option");
+            o.value="4";
+            o.innerHTML='a4';
+            //s1.appendChild(o);
+            //方法二：修改innerHTML
+            //s1.innerHTML=s1.innerHTML+"<option value='4'>a4</option>";
+            //方法三
+            var o=new Option("a4",4);
+            //s1.appendChild(o);
+            s1.options[s1.options.length]=o;
+        }
+        
+        function f3() {
+            //删除一个
+            //var index=prompt("请输入你要删除的索引，从0开始");
+            //s1.options[index]=null;
+            //删除全部
+            //s1.options.length=0;
+            //保留第一个
+            s1.options.length=1;
+
+        }
+    </script>
+</head>
+<body>
+    <select id="s1" style="width:300px;font-size: 30px;color: red;" onchange="f1();">
+        <option value="1">a1</option>
+        <option value="2">a2</option>
+        <option value="3">a3</option>
+    </select>
+
+    <a href="javascript:;" onclick="f1();">选择的值</a>
+    <a href="javascript:;" onclick="f2();">添加选项</a>
+    <a href="javascript:;" onclick="f3();">删除选项</a>
+
+</body>
+</html>
