@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        function advertise() {
+            open("adv.html");
+        }
+        function closeAd(e) {
+            d.style.display="none";
+            alert(e.cancelBubble);
+            e.cancelBubble=true;
+        }
+    </script>
+</head>
+<body>
+    <div id="d" style="width:200px;height:200px; background-color:#aa00ff;" onclick="advertise();">
+        <a href="javascript:;" style="float:right;" onclick="closeAd(event);">X</a>
+    </div>
+</body>
+</html>
