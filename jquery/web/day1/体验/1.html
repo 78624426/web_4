@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../jquery.js"></script>
+    <script>
+        $(function () {
+            var d=document.getElementById("d1");
+            console.log("innerHTML:"+$(d).html(),"innerText:"+$(d).text());
+            console.log($("#d1")[0].innerHTML);
+            //console.log($("#d1").get(0).innerHTML);
+            console.log($("#d1").html());
+
+            $("#d1").click(function () {
+                alert("hello")
+            });
+
+        });
+    </script>
+
+</head>
+<body>
+    <div id="d1">div1</div>
+</body>
+</html>
