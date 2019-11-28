@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../jquery.js"></script>
+    <script>
+        $(function () {
+            $("input").focus(function () {
+                $("input").css("background-color","#ffc");
+            });
+            $("input").blur(function () {
+                $("input").css("background-color","#0F0");
+            });
+            //mouseover事件
+            $("#bt1").mouseover(function () {
+                //让元素主动获得焦点
+                $("input").focus();
+            });
+            $("#bt2").mouseover(function () {
+                //让元素主动失去焦点
+                $("input").blur();
+            });
+            $("select").change(function () {
+                alert(this.selectedIndex);
+            });
+        })
+    </script>
+</head>
+<body>
+    <input type="text"/><br>
+    <button id="bt1">触发输入域的focus事件</button>
+    <button id="bt2">触发输入域的blur事件</button>
+    <select>
+        <option>a1</option>
+        <option>a2</option>
+    </select>
+</body>
+</html>

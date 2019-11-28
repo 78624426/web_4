@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../jquery.js"></script>
+    <script>
+        $(function () {
+            $(".close").click(function () {
+                $(".pic").fadeOut(1000);
+                localStorage.setItem("isClose","1");
+            });
+            $(".show").click(function () {
+                $(".pic").show(1000);
+                localStorage.removeItem("isClose");
+            });
+            if(localStorage.getItem("isClose")){
+                $(".pic").hide();
+            }
+        })
+
+    </script>
+</head>
+<body>
+    <i class="show">show</i>
+    <div class="pic" style="width:150px;height:150px;background: url('teacher.gif') no-repeat;">
+        <a style="width:85%;display: inline-block;" href=""></a>
+        <i class="close">X</i>
+    </div>
+</body>
+</html>

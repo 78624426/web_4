@@ -8,12 +8,14 @@
         $(function () {
 
             $("#b").bind("mouseout click dblclick", function () {
-                //$("#d").close("slow");
-                $("#d").css("display","none");
+                //$("#d").css("display","none");
+                //$("#d").hide(5000);
+                $("#d").hide("slow");
             });
         })
 
-
+//        a.prop("checked")
+//        b.prop("checked",a.prop("checked"));
     </script>
 </head>
 <body>
