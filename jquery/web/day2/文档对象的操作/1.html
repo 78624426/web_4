@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../jquery.js"></script>
+    <script>
+        $(function () {
+           $("#add").click(function () {
+               //方法一：dom追加
+               var li=document.createElement("li");
+               var txt=document.createTextNode($("#txt").val());
+               li.appendChild(txt);
+               //u.appendChild(li);
+               //方法2：dom字符串编辑
+               //u.innerHTML=u.innerHTML+"<li>"+$('#txt').val()+"</li>";
+                //方法3：jquery追加
+                var s="<li>"+$("#txt").val()+"</li>";
+                //$("#u").append(s);
+               //方法4：外部插入
+               //$("#u li:last").after(s);
+
+                //方法5：克隆,clone中如果带参数true，则不仅克隆标签对象，且克隆其事件
+               var cp=$("ul li:eq(1)").clone();
+               cp.text($("#txt").val());
+               //$("#u").append(cp);
+
+               //删除整个标签
+               //$("#u").remove();
+                //清空标签的内容
+               //$("#u").empty();;
+            /*当点击li标签时，复制并追加到ul尾部*/
+           });
+        });
+    </script>
+</head>
+<body>
+    <input type="text" id="txt"><br>
+    <input type="button" id="add" value="追加"><br>
+    <ul id="u">
+        <li>aaa</li>
+        <li>bbb</li>
+        <li>ccc</li>
+    </ul>
+
+</body>
+</html>

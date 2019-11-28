@@ -11,8 +11,12 @@
                $("#txt").val("hello");
                $("input[type=text]").val("look at my clothes!");
 
-               $("img").attr("src","teacher.gif");
-
+               //$("img").attr("src","teacher.gif");
+               $("img").attr({"src":"teacher.gif","width":"30%"});
+               //$("#check").attr("checked",true);
+               $("#check").prop("checked",true);
+               $("#o2").prop("selected",true);
+               $("#d").html("where is my bag?");
            });
         });
     </script>
@@ -24,7 +28,7 @@
     <img id="img" /><br>
     <select name="select">
         <option value="one" id="o1">1</option>
-        <option value="two" id="o2">2</option>
+        <option value="two"  id="o2">2</option>
     </select>
     <div id="d"></div>
 
