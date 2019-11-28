@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../jquery.js"></script>
+    <script>
+        $(function () {
+            $("button").click(function () {
+                //$("div").text($("input").serialize());
+                //$("div").text($("form input").serialize());
+                $("div").text($("form").serialize());
+            });
+        })
+    </script>
+</head>
+<body>
+    <form>
+        <input name="user" placeholder="用户名"><br>
+        <input name="pass" type="password" placeholder="密码"><br>
+    </form>
+    <button>序列化</button>
+    <div></div>
+</body>
+</html>
