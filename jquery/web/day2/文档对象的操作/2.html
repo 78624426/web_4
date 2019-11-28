@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../jquery.js"></script>
+    <script>
+        $(function () {
+            $("#more").click(f2);
+            $("div a[name='delete']").click(del);
+
+
+            i=1;
+        })
+        function f1() {
+            //复制div
+            var d=$("#d").clone(true);
+            //清除复制出来div的value值
+            $("div:last").after(d);
+            //$("div input").val("");错误，清空所有
+            //$("div input:last").val("");//清空最后一个
+
+            d.attr("id","d"+i);
+            $("#d"+i+" input").val("");
+            i++;
+        }
+
+        function del() {
+            if($(this).parent().attr("id")=="d"){
+                return;
+            }
+            $(this).parent().remove();
+        }
+        function f2() {
+            var v=$("div:last input").val();
+            if(v==''){
+                alert("请先添加文件!");
+                return;
+            }
+            f1();
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="上传更多" id="more">
+    <div id="d">
+        文件：<input type="file"><a href="javascript:;" name="delete">删除</a>
+    </div>
+</body>
+</html>

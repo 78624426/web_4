@@ -5,6 +5,7 @@
     <title>Title</title>
     <script src="../../jquery.js"></script>
     <script>
+
         $(function () {
            $("#add").click(function () {
                //方法一：dom追加
@@ -31,6 +32,11 @@
                //$("#u").empty();;
             /*当点击li标签时，复制并追加到ul尾部*/
            });
+
+            $("ul li").click(function () {
+                var cp=$(this).clone(true);
+                $("#u").append(cp);
+            });
         });
     </script>
 </head>
