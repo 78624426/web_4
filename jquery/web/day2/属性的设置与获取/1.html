@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../jquery.js"></script>
+    <script>
+        $(function () {
+           $("#load").click(function () {
+               console.log($("#txt").val());
+               $("#txt").val("hello");
+               $("input[type=text]").val("look at my clothes!");
+
+               $("img").attr("src","teacher.gif");
+
+           });
+        });
+    </script>
+</head>
+<body>
+    <a href="javascript:;" id="load">load</a><br>
+    <input type="text" id="txt" value="abc"/><br>
+    <input type="checkbox" id="check"/><br>
+    <img id="img" /><br>
+    <select name="select">
+        <option value="one" id="o1">1</option>
+        <option value="two" id="o2">2</option>
+    </select>
+    <div id="d"></div>
+
+</body>
+</html>
