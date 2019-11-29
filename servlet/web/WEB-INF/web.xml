@@ -13,10 +13,10 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>a2</servlet-name>
-        <servlet-class>day1.demo1.Servlet2</servlet-class>
+        <servlet-class>day1.demo2.Test1</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>a2</servlet-name>
-        <url-pattern>/*</url-pattern>
+        <url-pattern>/day1/demo2/Test1</url-pattern>
     </servlet-mapping>
 </web-app>
