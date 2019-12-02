@@ -23,9 +23,28 @@
             <param-name>abc</param-name>
             <param-value>hello</param-value>
         </init-param>
+        <load-on-startup>0</load-on-startup>
     </servlet>
     <servlet-mapping>
         <servlet-name>S1</servlet-name>
         <url-pattern>/day2/demo2/s1</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>demo1</servlet-name>
+        <servlet-class>day2.转发与重定向.Demo1</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>demo1</servlet-name>
+        <url-pattern>/day2/tr/demo1</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>demo2</servlet-name>
+        <servlet-class>day2.转发与重定向.Demo2</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>demo2</servlet-name>
+        <url-pattern>/day2/tr/demo2</url-pattern>
     </servlet-mapping>
 </web-app>

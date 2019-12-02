@@ -7,17 +7,27 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class S1 extends HttpServlet {
+
+    {
+        System.out.println("s1 ....");
+    }
     @Override
     public void init() throws ServletException {
         System.out.println("s1 is created");
 
     }
 
+    @Override
+    public void destroy() {
+        System.out.println("s1 is destroied");
+    }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("get....");
         System.out.println(this.getServletConfig().getInitParameter("blackIP"));
+
+
     }
 
     @Override
