@@ -11,12 +11,21 @@
         <servlet-name>aa</servlet-name>
         <url-pattern>/a/b/*</url-pattern>
     </servlet-mapping>
+
     <servlet>
-        <servlet-name>a2</servlet-name>
-        <servlet-class>day1.demo2.Test1</servlet-class>
+        <servlet-name>S1</servlet-name>
+        <servlet-class>day2.生命周期.S1</servlet-class>
+        <init-param>
+            <param-name>blackIP</param-name>
+            <param-value>192.168.1.119</param-value>
+        </init-param>
+        <init-param>
+            <param-name>abc</param-name>
+            <param-value>hello</param-value>
+        </init-param>
     </servlet>
     <servlet-mapping>
-        <servlet-name>a2</servlet-name>
-        <url-pattern>/day1/demo2/Test1</url-pattern>
+        <servlet-name>S1</servlet-name>
+        <url-pattern>/day2/demo2/s1</url-pattern>
     </servlet-mapping>
 </web-app>
