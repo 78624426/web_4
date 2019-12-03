@@ -3,4 +3,12 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+    <servlet>
+        <servlet-name>c</servlet-name>
+        <servlet-class>day1.cookie.C</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>c</servlet-name>
+        <url-pattern>/day1/cookie/c/*</url-pattern>
+    </servlet-mapping>
 </web-app>
