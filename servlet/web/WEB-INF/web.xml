@@ -4,47 +4,46 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
     <servlet>
-        <servlet-name>aa</servlet-name>
-        <servlet-class>day1.demo1.Servlet</servlet-class>
+        <servlet-name>ctx</servlet-name>
+        <servlet-class>day3.contxt.Serv1</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>aa</servlet-name>
-        <url-pattern>/a/b/*</url-pattern>
+        <servlet-name>ctx</servlet-name>
+        <url-pattern>/day3/contxt/serv1</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>serv2</servlet-name>
+        <servlet-class>day3.contxt.Serv2</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>serv2</servlet-name>
+        <url-pattern>/day3/contxt/serv2</url-pattern>
     </servlet-mapping>
 
-    <servlet>
-        <servlet-name>S1</servlet-name>
-        <servlet-class>day2.生命周期.S1</servlet-class>
-        <init-param>
-            <param-name>blackIP</param-name>
-            <param-value>192.168.1.119</param-value>
-        </init-param>
-        <init-param>
-            <param-name>abc</param-name>
-            <param-value>hello</param-value>
-        </init-param>
-        <load-on-startup>0</load-on-startup>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>S1</servlet-name>
-        <url-pattern>/day2/demo2/s1</url-pattern>
-    </servlet-mapping>
+    <context-param>
+        <param-name>a1</param-name>
+        <param-value>123</param-value>
+    </context-param>
+    <context-param>
+        <param-name>phone</param-name>
+        <param-value>1391353365</param-value>
+    </context-param>
     
     <servlet>
-        <servlet-name>demo1</servlet-name>
-        <servlet-class>day2.转发与重定向.Demo1</servlet-class>
+        <servlet-name>login</servlet-name>
+        <servlet-class>day3.login.Login</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>demo1</servlet-name>
-        <url-pattern>/day2/tr/demo1</url-pattern>
+        <servlet-name>login</servlet-name>
+        <url-pattern>/day3/login/Login</url-pattern>
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>demo2</servlet-name>
-        <servlet-class>day2.转发与重定向.Demo2</servlet-class>
+        <servlet-name>product</servlet-name>
+        <servlet-class>day3.login.ShowProduct</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>demo2</servlet-name>
-        <url-pattern>/day2/tr/demo2</url-pattern>
+        <servlet-name>product</servlet-name>
+        <url-pattern>/day3/login/product</url-pattern>
     </servlet-mapping>
 </web-app>
