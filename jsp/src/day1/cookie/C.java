@@ -35,13 +35,27 @@ public class C extends HttpServlet {
 
         resp.getWriter().write("<h1>写入cookie成功</>");
     }
-    void select(HttpServletRequest req, HttpServletResponse resp){
-
+    void select(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        System.out.println("服务器端从客户端收到的cookie信息如下：");
+        Cookie[]arr=req.getCookies();
+        if(arr==null){
+            resp.getWriter().write("你没有cookie");
+            return;
+        }
+        for(Cookie c:arr){
+            System.out.println(c.getName()+":"+c.getValue());
+        }
     }
     void delete(HttpServletRequest req, HttpServletResponse resp){
-
+        Cookie c=new Cookie("admin","dddd");
+        c=new Cookie("phone","dddd");
+        c.setMaxAge(0);
+        c.setPath("/jsp/day1/2");
+        resp.addCookie(c);
     }
     void modify(HttpServletRequest req, HttpServletResponse resp){
-
+        Cookie c=new Cookie("admin","dddd");
+        c.setMaxAge(3600*24*7);
+        resp.addCookie(c);
     }
 }
