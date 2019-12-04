@@ -4,11 +4,11 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
     <servlet>
-        <servlet-name>login</servlet-name>
-        <servlet-class>day2.demo1.LoginServlet</servlet-class>
+        <servlet-name>c</servlet-name>
+        <servlet-class>day1.cookie.C</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>login</servlet-name>
-        <url-pattern>/day2/demo1/login</url-pattern>
+        <servlet-name>c</servlet-name>
+        <url-pattern>/day1/cookie/c/*</url-pattern>
     </servlet-mapping>
 </web-app>
