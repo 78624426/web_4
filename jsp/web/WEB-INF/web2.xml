@@ -4,22 +4,20 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
     <servlet>
-        <servlet-name>history</servlet-name>
-        <servlet-class>day3.history.HistoryServlet</servlet-class>
+        <servlet-name>login</servlet-name>
+        <servlet-class>day2.demo1.LoginServlet</servlet-class>
     </servlet>
-    
     <servlet-mapping>
-        <servlet-name>history</servlet-name>
-        <url-pattern>/day3/history/servlet</url-pattern>
+        <servlet-name>login</servlet-name>
+        <url-pattern>/day2/demo1/login</url-pattern>
     </servlet-mapping>
     
-    
     <servlet>
-        <servlet-name>removeHistory</servlet-name>
-        <servlet-class>day3.history.RemoveServlet</servlet-class>
+        <servlet-name>url</servlet-name>
+        <servlet-class>day2.demo2.URLServ</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>removeHistory</servlet-name>
-        <url-pattern>/day3/history/revove</url-pattern>
+        <servlet-name>url</servlet-name>
+        <url-pattern>/day2/demo2/url</url-pattern>
     </servlet-mapping>
 </web-app>
