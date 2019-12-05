@@ -22,4 +22,13 @@
         <servlet-name>removeHistory</servlet-name>
         <url-pattern>/day3/history/revove</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>login</servlet-name>
+        <servlet-class>day3.login.Login</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>login</servlet-name>
+        <url-pattern>/day3/login/login</url-pattern>
+    </servlet-mapping>
 </web-app>
