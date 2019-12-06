@@ -34,4 +34,18 @@
         <servlet-name>test</servlet-name>
         <url-pattern>/day4/filter/test</url-pattern>
     </servlet-mapping>
+
+    <!--监听器-->
+    <listener>
+        <listener-class>day4.listener.MyListener</listener-class>
+    </listener>
+    
+    <servlet>
+        <servlet-name>listerServlet</servlet-name>
+        <servlet-class>day4.listener.ListerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>listerServlet</servlet-name>
+        <url-pattern>/day4/listener/servlet</url-pattern>
+    </servlet-mapping>
 </web-app>
