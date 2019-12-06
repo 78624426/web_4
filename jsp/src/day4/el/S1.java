@@ -26,15 +26,21 @@ public class S1 extends HttpServlet{
         List<String>li=new ArrayList<>();
         li.add("武松");
         li.add("大狼");
-        req.setAttribute("list",li);
+
+        List<User>users=new ArrayList<>();
+        users.add(new User("张飞","333"));
+        users.add(new User("刘备","111"));
+        req.setAttribute("users",users);
 
         //Map
-        Map<String,String> m=new HashMap<>();
-        m.put("a1","one");
-        m.put("a2","two");
+        Map<String,User> m=new HashMap<>();
+        m.put("u1",new User("张飞","333"));
+        m.put("u2",new User("刘备","111"));
         req.setAttribute("map",m);
 
+        req.setAttribute("a",10);
 
-        req.getRequestDispatcher("/day4/el/1.jsp").forward(req,resp);
+
+        req.getRequestDispatcher("/day4/el/each.jsp").forward(req,resp);
     }
 }
