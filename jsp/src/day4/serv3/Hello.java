@@ -19,9 +19,7 @@ public class Hello extends HttpServlet{
         req.getSession().setAttribute("username","laowang");
         try {
             Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        } catch (InterruptedException e) {}
         req.getSession().removeAttribute("username");
     }
 }
