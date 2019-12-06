@@ -55,4 +55,13 @@
         <filter-name>myfilter</filter-name>
         <url-pattern>/day3/filter/two</url-pattern>
     </filter-mapping>
+    
+    <servlet>
+        <servlet-name>two</servlet-name>
+        <servlet-class>day3.filter.Two</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>two</servlet-name>
+        <url-pattern>/day3/filter/two</url-pattern>
+    </servlet-mapping>
 </web-app>

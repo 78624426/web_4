@@ -9,9 +9,9 @@
 <html>
 <head>
     <title>Title</title>
-    <%String path=request.getContextPath();%>
 </head>
 <body>
+    <%String path=request.getContextPath();%>
     <form action="<%=path%>/day3/filter/one">
         <input name="name" placeholder="用户名"><br>
         <input type="submit">
