@@ -3,7 +3,7 @@ package day4.serv3;
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import java.io.IOException;
-@WebFilter("/*")
+@WebFilter("/aa")
 public class Myfilter implements Filter{
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
