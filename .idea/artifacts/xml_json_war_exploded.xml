@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="xml_json:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/xml_json_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="xml_json/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="xml_json" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
