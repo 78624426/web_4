@@ -9,20 +9,17 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="f" uri="http://java.sun.com/jsp/jstl/functions" %>
 <html>
-<head>
-    <title>Title</title>
-</head>
 <body>
     <h1>修改员工信息</h1>
     <hr>
-    <form action="${pageContext.request.contextPath}/add.emp" method="post">
+    <form action="${pageContext.request.contextPath}/modify.emp" method="post">
         <input name="id" value="${emp.id}" readonly>
         <input name="name" value="${emp.name}"><br>
         <input name="salary" type="number" value="${emp.salary}"><br>
         <input name="gender" type="radio" value="男" <c:if test="${emp.gender=='男'}">checked</c:if> >男
         <input name="gender" type="radio" value="女" <c:if test="${emp.gender=='女'}">checked</c:if> >女<br>
         <select name="edu">
-            <option value="-1">--请选择--</option>
+            <option value="未知">--请选择--</option>
             <option value="大专"  <c:if test="${emp.edu=='大专'}">selected </c:if>   >大专</option>
             <option value="本科"  <c:if test="${emp.edu=='本科'}">selected </c:if>   >本科</option>
         </select> <br>

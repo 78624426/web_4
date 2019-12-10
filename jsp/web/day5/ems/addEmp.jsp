@@ -19,7 +19,7 @@
         <input name="gender" type="radio" value="男">男
         <input name="gender" type="radio" value="女">女<br>
         <select name="edu">
-            <option value="-1">--请选择--</option>
+            <option value="未知">--请选择--</option>
             <option value="大专">大专</option>
             <option value="本科">本科</option>
         </select> <br>
