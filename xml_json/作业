@@ -1,0 +1,3 @@
+验证用户登录，如果用户未登录则跳转到login.jsp
+设置编码为utf-8
+验证所有请求的url路径中要排除login.jsp,login.do
