@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function f1() {
+            var usr={"name":"admin","age":25};
+            console.log(usr['name'],usr.age);
+        }
+        function f2() {
+            var usr={"name":{"firstname":"李","lastname":"四"},"age":23};
+            console.log(usr.age);
+            console.log(usr.name.firstname,usr.name["lastname"]);
+        }
+
+        function f3() {
+            var usr={"name":"admin","age":25};
+            var person={"id":"123","user":usr};
+            console.log(person.id,person.user.name);
+        }
+
+        function f4() {
+            var usr=[{"name":"admin","age":23},{"n":"a1"}];
+            console.log(usr[0].name);
+        }
+
+        function f5() {
+            var usr="{'name':'admin','age':23}";
+            //把字符串转json
+            //usr=eval("("+usr+")");
+            //eval("alert('hello')");
+            usr="{\"name\":\"admin\",\"age\":23}";
+            usr=JSON.parse(usr);
+            console.log(usr.name,usr.age);
+        }
+    </script>
+</head>
+<body>
+    <a href="javascript:;" onclick="f1();">f1方法</a><br>
+    <a href="javascript:;" onclick="f2();">f2方法</a><br>
+    <a href="javascript:;" onclick="f3();">f3方法</a><br>
+    <a href="javascript:;" onclick="f4();">f4方法</a><br>
+    <a href="javascript:;" onclick="f5();">f5方法:字符串转json对象</a><br>
+</body>
+</html>
