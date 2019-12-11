@@ -9,8 +9,21 @@
 <html>
 <head>
     <title>Title</title>
+    <script>
+        function run() {
+            return true;
+        }
+    </script>
 </head>
 <body>
     <h1>hello,I'm reg.jsp</h1>
+    <form id="f" method="post" action="${pageContext.request.contextPath}/regHandle.do" onsubmit="return run();">
+        <input name="username" placeholder="用户名"><br>
+        <input type="password" placeholder="密码"><br>
+        <input name="email" placeholder="邮箱"><br>
+        <input type="submit" value="注册">
+    </form>
+    <span style="color: red;">${requestScope.msg}</span>
+
 </body>
 </html>
