@@ -6,9 +6,28 @@ public class Emp {
     double salary;
     String gender;
     String edu;
-    String hobbies;
+    String hobbies[];
+    String hobbies_str;
 
+    public String getHobbies_str() {
+        return hobbies_str;
+    }
+    public void setHobbies_str(String hobbies_str) {
+        this.hobbies_str = hobbies_str;
+    }
+    public String[] getHobbies() {
+        return hobbies;
+    }
 
+    public void setHobbies(String[] hobbies) {
+        this.hobbies=hobbies;
+        StringBuilder sb=new StringBuilder(6);
+        for(String t:hobbies){
+            sb.append(t).append(",");
+        }
+        sb.deleteCharAt(sb.length()-1);
+        this.hobbies_str = sb.toString();
+    }
     public Integer getId() {
         return id;
     }
@@ -49,24 +68,18 @@ public class Emp {
         this.edu = edu;
     }
 
-    public String getHobbies() {
-        return hobbies;
-    }
 
-    public void setHobbies(String hobbies) {
-        this.hobbies = hobbies;
-    }
 
     public Emp() {
     }
 
-    public Emp(Integer id, String name, double salary, String gender, String edu, String hobbies) {
+    public Emp(Integer id, String name, double salary, String gender, String edu, String hobbies_str) {
         this.id = id;
         this.name = name;
         this.salary = salary;
         this.gender = gender;
         this.edu = edu;
-        this.hobbies = hobbies;
+        this.hobbies_str = hobbies_str;
     }
 
     @Override
@@ -77,7 +90,7 @@ public class Emp {
                 ", salary=" + salary +
                 ", gender='" + gender + '\'' +
                 ", edu='" + edu + '\'' +
-                ", hobbies='" + hobbies + '\'' +
+                ", hobbies_str='" + hobbies_str + '\'' +
                 '}';
     }
 }

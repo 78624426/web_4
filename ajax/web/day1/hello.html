@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function f() {
+            var xhr=new XMLHttpRequest();
+            xhr.onreadystatechange=function () {
+                console.log("就绪状态值："+xhr.readyState)
+                if(xhr.readyState==4){
+                    if(xhr.status==200){
+                        var rs=xhr.responseText;
+                        msg.innerHTML=rs;
+                    }else{
+                        msg.innerHTML="<font color='red'>要访问的出错</font>";
+                    }
+                }else{
+                    msg.innerHTML="正在请求中....";
+                }
+            };
+            var name=document.getElementById("name").value;
+            xhr.open("get","/ajax/servlet/Hello?name="+name);
+            xhr.send();
+        }
+    </script>
+</head>
+<body>
+    <a href="javascript:;" onclick="f();">hello</a>
+    <input id="name">
+    <span id="msg"></span>
+</body>
+</html>

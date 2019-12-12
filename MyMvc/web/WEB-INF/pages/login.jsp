@@ -12,5 +12,11 @@
 </head>
 <body>
     <h1>login.jsp</h1>
+    <form action="${pageContext.request.contextPath}/loginHandle.do">
+        <input name="username" placeholder="用户名"><br>
+        <input type="password" name="password" placeholder="密码"><br>
+        <input type="submit" value="登录">
+    </form>
+    <span style="color:red;">${msg}</span>
 </body>
 </html>
