@@ -32,7 +32,7 @@
                 d.css("display","none");
                 return;
             }
-            $.getJSON("${pageContext.request.contextPath}/findOne1.do",
+            $.getJSON("${pageContext.request.contextPath}/findOne2.do",
                 {"key":key},
                 function (data) {
                     if(data.msg==null){
@@ -43,7 +43,33 @@
                     d.html("<li>"+data.msg+"</li>");
                 }
             )
+        }
 
+        function queryMore() {
+            var key=$("#more").val();
+            var d=$("#d");
+            if(""==key){
+                //d.hide();
+                d.css("display","none");
+                return;
+            }
+            d.html("");
+            $.ajax({
+                url:"${pageContext.request.contextPath}/findMore.do",
+                data:{"key":key},
+                dataType:"json",
+                success:function (data) {
+                    if(data.length==0){//m查到数据，隐藏div
+                        d.hide();
+                        return;
+                    }
+                    d.show();
+                    for(var i=0;i<data.length;i++){
+                        var c=d.html();
+                        d.html(c+"<li>"+data[i].msg+"</li>");
+                    }
+                }
+            });
         }
     </script>
 </head>

@@ -6,6 +6,7 @@ import day1.ajax.entity.Result;
 import day1.ajax.mapper.DataMapper;
 import jdbc.tmp.Tmp;
 import mvc.annotation.RequestMapping;
+import mvc.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -55,8 +56,28 @@ public class DataController  {
         if(!list.isEmpty()){//非空则进入
             d=list.get(0);
         }
-
-        resp.getWriter().print("hello");
+        resp.getWriter().print(JSON.toJSONString(d));
     }
 
+    @RequestMapping("/findOne2")
+    @ResponseBody
+    public Data findOne2(HttpServletRequest req, HttpServletResponse resp)throws Exception{
+        String sql="select msg,keyword from t_data where keyword=? or msg=?";
+        String key=req.getParameter("key");
+        List<Data>list=Tmp.query(sql,new DataMapper(),key,key);
+        Data d=new Data();
+        if(!list.isEmpty()){//非空则进入
+            d=list.get(0);
+        }
+        System.out.println(JSON.toJSONString(list));
+        return d;
+    }
+    @RequestMapping("/findMore")
+    @ResponseBody
+    public List<Data> findMore(HttpServletRequest req, HttpServletResponse resp)throws Exception{
+        String sql="select msg,keyword from t_data where keyword like ? or msg like ?";
+        String key=req.getParameter("key");
+        List<Data>list=Tmp.query(sql,new DataMapper(),"%"+key+"%","%"+key+"%");
+        return list;
+    }
 }
