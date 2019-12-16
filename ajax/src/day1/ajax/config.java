@@ -10,6 +10,7 @@ public class config extends WebConfigurer{
     public void addViewControllers(ResourceHandlerRegistry r) {
         r.addViewController("add","/add")
         .addViewController("query","/query")
-        .addViewController("upload","/upload");
+        .addViewController("upload","/upload")
+        .addViewController("mvcUp","/mvcUp");
     }
 }
