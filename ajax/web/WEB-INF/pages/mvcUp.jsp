@@ -32,7 +32,7 @@
     </script>
 </head>
 <body>
-    <form action="${pageContext.request.contextPath}/day2/upload/up.do" method="post" enctype="multipart/form-data">
+    <form action="${pageContext.request.contextPath}/day2/upload/up.do" >
         <input type="file" name="f"><br>
         <input name="user" id="userName"><br>
         <input type="submit" value="上传">

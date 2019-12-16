@@ -18,11 +18,9 @@ public class MvcUp {
         resp.setContentType("text/html;charset=utf-8");
         Result rs=new Result();
         for(Part p:parts){
-            String tmp=p.getHeader("Content-Disposition");
             String type=p.getContentType();
-            System.out.println("tmp:"+tmp+",type:"+type);
             if(type!=null){
-                String name=tmp.split("\"")[3];
+                String name=p.getSubmittedFileName();
                 //p.write("d:/"+name);
                 String path=req.getServletContext().getRealPath("/"+name);
                 System.out.println("文件写入:" + path);

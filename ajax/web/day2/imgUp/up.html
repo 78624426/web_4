@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/ajax/js/jquery.js"></script>
+    <script>
+        function f() {
+            var fo=document.getElementById("up").files[0];
+            var d=new FormData();
+            d.append("file",fo);
+            $.ajax({
+                url:'/ajax/day2/upload/imgUp',
+                type:'post',
+                data:d,
+                processData:false,
+                contentType:false,
+                success:function (arg) {
+                    $("img").attr("src",arg);
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <form name="userform">
+        <input type="file" id="up"><br>
+        <img style="height: 300px;width:300px;"><br>
+        <input type="button" value="提交" onclick="f();">
+    </form>
+</body>
+</html>
