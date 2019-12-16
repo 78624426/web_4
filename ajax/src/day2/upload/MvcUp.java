@@ -23,10 +23,11 @@ public class MvcUp {
             System.out.println("tmp:"+tmp+",type:"+type);
             if(type!=null){
                 String name=tmp.split("\"")[3];
-                p.write("d:/"+name);
+                //p.write("d:/"+name);
+                String path=req.getServletContext().getRealPath("/"+name);
+                System.out.println("文件写入:" + path);
+                p.write(path);
                 rs.setInfo("文件上传成功");
-            }else{
-                rs.setInfo("没上传文件");
             }
         }
         return rs;

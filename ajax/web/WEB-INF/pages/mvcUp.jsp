@@ -25,7 +25,7 @@
                 processData:false,
                 contentType:false,
                 success:function (data) {
-                    console.log(data.msg);
+                    console.log(data.info);
                 }
             });
         }
