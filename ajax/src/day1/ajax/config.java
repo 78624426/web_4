@@ -9,6 +9,7 @@ public class config extends WebConfigurer{
     @Override
     public void addViewControllers(ResourceHandlerRegistry r) {
         r.addViewController("add","/add")
-        .addViewController("query","/query");
+        .addViewController("query","/query")
+        .addViewController("upload","/upload");
     }
 }
