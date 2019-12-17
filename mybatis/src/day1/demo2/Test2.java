@@ -15,7 +15,7 @@ public class Test2 {
         session.insert("dao.IUserDao.insertUser",u);
         session.commit();
         System.out.println("所插入的主键值："+u.getId());
-
+        Util.closeSession(session);
 
     }
 }
