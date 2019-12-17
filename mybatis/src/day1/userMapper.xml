@@ -12,4 +12,8 @@
         select id,name,pass,phone,address
         from t_user where name like #{abc}
     </select>
+
+    <insert id="insertUser" useGeneratedKeys="true" keyProperty="id">
+        insert into t_user(name,pass,phone,address) values (#{name},#{pass},#{phone},#{address})
+    </insert>
 </mapper>

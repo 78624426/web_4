@@ -15,6 +15,7 @@ public class Test1 {
 
         //3.操作数据库,如果返回多个，用selectList,"%a%"
         Object o=session.selectOne("dao.IUserDao.selectById",100);
+        session.close();
         System.out.println(o);
 
     }
