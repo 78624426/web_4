@@ -18,13 +18,14 @@ public class ImgUp extends HttpServlet{
         Part p=req.getPart("file");
         String fileName=p.getSubmittedFileName();
 
-        //方案一：在项目目录中建文件夹，放在文件夹中
-//        String path=this.getServletContext().getRealPath("/upload");
-//        new File(path).mkdirs();
-//        path=path+"/"+fileName;
-//        p.write(path);
-//        //把路径响应到页面的img标签中:/ajax/upload/fileName
-//        resp.getWriter().write(req.getContextPath()+"/upload/"+fileName);
+        /*方案一：在项目目录中建文件夹，放在文件夹中
+        String path=this.getServletContext().getRealPath("/upload");
+        new File(path).mkdirs();
+        path=path+"/"+fileName;
+        p.write(path);
+        //把路径响应到页面的img标签中:/ajax/upload/fileName
+        resp.getWriter().write(req.getContextPath()+"/upload/"+fileName);
+        */
 
         //方案二：写到项目根目录中，要延迟5秒才能看到回显
 //        String path=this.getServletContext().getRealPath("/"+fileName);

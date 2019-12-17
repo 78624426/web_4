@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd" >
+<configuration>
+    <!--配置properties文件位置	-->
+    <properties resource=""></properties>
+
+    <!--别名配置	-->
+    <typeAliases>
+        <package name="day1.entity"/>
+    </typeAliases>
+
+    <environments default="mybatis">
+        <environment id="mybatis">
+            <!-- 事务管理器-->
+            <transactionManager type="JDBC"></transactionManager>
+            <!-- 连接信息-->
+            <dataSource type="unpooled">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url"
+                          value="jdbc:mysql://127.0.0.1:3306/lly"/>
+                <property name="username" value="root"/>
+                <property name="password" value="123"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+        <mapper resource="day1/userMapper.xml"/>
+    </mappers>
+</configuration>
