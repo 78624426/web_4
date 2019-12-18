@@ -1,4 +1,4 @@
-package day1.demo3;
+package day2.demo1.dao;
 
 import day1.entity.User;
 import org.apache.ibatis.annotations.Param;

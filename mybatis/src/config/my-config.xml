@@ -3,10 +3,10 @@
 <configuration>
     <!--配置properties文件位置	-->
     <properties resource=""></properties>
-
     <!--别名配置	-->
     <typeAliases>
-        <package name="day1.entity" />
+        <typeAlias type="day1.entity.User" alias="abc"/>
+        <package name="day1.entity"/>
     </typeAliases>
 
     <environments default="mybatis">
@@ -25,6 +25,6 @@
     </environments>
 
     <mappers>
-        <mapper resource="day1/userMapper.xml"/>
+        <mapper resource="day2/mapper/userMapper.xml"/>
     </mappers>
 </configuration>

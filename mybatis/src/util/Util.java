@@ -9,7 +9,7 @@ public class Util {
     static SqlSessionFactory factory;
     static{
         SqlSessionFactoryBuilder builder = new SqlSessionFactoryBuilder();
-        factory=builder.build(Test1.class.getClassLoader().getResourceAsStream("day1/my-config.xml"));
+        factory=builder.build(Test1.class.getClassLoader().getResourceAsStream("config/my-config.xml"));
     }
     public static SqlSession getSession(){
         SqlSession session=factory.openSession();
