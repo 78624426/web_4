@@ -27,4 +27,5 @@
     <mappers>
         <mapper resource="day2/mapper/userMapper.xml"/>
     </mappers>
+
 </configuration>
