@@ -37,4 +37,14 @@ public class Item {
     public void setOrder(Order order) {
         this.order = order;
     }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "id=" + id +
+                ", product='" + product + '\'' +
+                ", num=" + num +
+                ", order=" + order +
+                '}';
+    }
 }

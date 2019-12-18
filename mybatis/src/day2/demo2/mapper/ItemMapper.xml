@@ -9,7 +9,19 @@
             (#{product},#{num},#{order.id})
     </insert>
 
-    <select id="selectById" resultType="item">
+    <resultMap id="imap" type="item">
+        <id property="id" column="id"/>
+        <result property="product" column="product"/>
+        <result property="num" column="num"/>
+        <association property="order" javaType="order">
+            <id property="id" column="oid"/>
+            <result property="no" column="no"/>
+        </association>
+    </resultMap>
 
+    <select id="selectById" resultMap="imap">
+      select i.id ,num,product,no,o.id oid
+      from t_order o,t_item i
+      where o.id=i.order_id and i.id=#{id}
     </select>
 </mapper>

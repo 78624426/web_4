@@ -14,7 +14,7 @@ public class Test {
     static IOrderDao orderDao=session.getMapper(IOrderDao.class);
     static IItemDao itemDao=session.getMapper(IItemDao.class);
     //insert
-    public static void main(String[] args) {
+    public static void insert() {
         Order order=new Order();
         order.setNo(getNo(4));
 
@@ -30,8 +30,19 @@ public class Test {
         i2.setOrder(order);
 
         orderDao.insertOrder(order);
-        System.out.println(i1.getOrder().getId());
+        itemDao.insertItem(i1);
+        itemDao.insertItem(i2);
+        session.commit();
+    }
 
+    static void searchWithSession(SqlSession session){
+        IItemDao dao=session.getMapper(IItemDao.class);
+        Item i=dao.selectById(24);
+        System.out.println(i);
+    }
+
+    public static void main(String[] args) {
+        searchWithSession(session);
     }
 
     static String getNo(int len){
@@ -39,9 +50,9 @@ public class Test {
         StringBuilder sb=new StringBuilder(len);
         for(int i=0;i<len;i++){
             if(r.nextBoolean()){//小写
-                sb.append('a'+r.nextInt(26));
+                sb.append((char)('a'+r.nextInt(26)));
             }else{
-                sb.append('A'+r.nextInt(26));
+                sb.append((char)('A'+r.nextInt(26)));
             }
         }
         return sb.toString();

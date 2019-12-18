@@ -7,6 +7,7 @@
     <typeAliases>
         <typeAlias type="day1.entity.User" alias="abc"/>
         <package name="day1.entity"/>
+        <package name="day2.demo2.entity"/>
     </typeAliases>
 
     <environments default="mybatis">
