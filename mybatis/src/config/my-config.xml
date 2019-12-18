@@ -26,6 +26,9 @@
 
     <mappers>
         <mapper resource="day2/mapper/userMapper.xml"/>
+        <mapper class="day2.demo1.dao.UserDao"/>
+        <mapper resource="day2/demo2/mapper/ItemMapper.xml"/>
+        <mapper resource="day2/demo2/mapper/OrderMapper.xml"/>
     </mappers>
 
 </configuration>

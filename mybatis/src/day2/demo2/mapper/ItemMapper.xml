@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="day2.demo2.dao.IItemDao">
+
+    <insert id="insertItem">
+        insert into t_item(product,num,order_id) VALUES
+            (#{product},#{num},#{order.id})
+    </insert>
+
+    <select id="selectById" resultType="item">
+
+    </select>
+</mapper>

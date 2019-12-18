@@ -58,4 +58,11 @@
         where id=#{id}
     </update>
 
+    <select id="selectByIds" resultType="user">
+        select <include refid="userColum"/>
+        from t_user where id in
+        <foreach collection="list" item="it" index="i" open="(" close=")" separator=",">
+            #{it}
+        </foreach>
+    </select>
 </mapper>
