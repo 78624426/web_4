@@ -6,5 +6,29 @@
     <insert id="insertOrder" useGeneratedKeys="true" keyProperty="id">
         insert into t_order (no) values(#{no})
     </insert>
+<!--查询t_order, 返回order对象
+    select o.id,no,i.id i_id,product,num
+    from t_order o,t_item i
+    where o.id=i.order_id and o.id=6;
+-->
 
+    <sql id="orderCln">
+        o.id,o.no,i.id i_id,i.product,i.num
+    </sql>
+    <select id="selectById" resultMap="orderMap">
+        select <include refid="orderCln"/>
+        from t_order o,t_item i
+        where o.id=i.order_id and o.id=#{id}
+    </select>
+    
+    <resultMap id="orderMap" type="order">
+        <id property="id" column="id"/>
+        <result property="no" column="no"/>
+        <!--<collection property="items" javaType="item">-->
+        <collection property="items" ofType="item">
+            <id property="id" column="i_id"/>
+            <result property="product" column="product"/>
+            <result property="num" column="num"/>
+        </collection>
+    </resultMap>
 </mapper>

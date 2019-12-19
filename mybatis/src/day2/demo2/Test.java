@@ -42,7 +42,8 @@ public class Test {
     }
 
     public static void main(String[] args) {
-        searchWithSession(session);
+        //searchWithSession(session);
+        System.out.println(orderDao.selectById(6));
     }
 
     static String getNo(int len){
