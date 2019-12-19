@@ -10,7 +10,7 @@ import util.Util;
 import java.util.Random;
 
 public class Test {
-    static SqlSession session= Util.getSession();
+    public static SqlSession session= Util.getSession();
     static IOrderDao orderDao=session.getMapper(IOrderDao.class);
     static IItemDao itemDao=session.getMapper(IItemDao.class);
     //insert
@@ -35,7 +35,7 @@ public class Test {
         session.commit();
     }
 
-    static void searchWithSession(SqlSession session){
+    public static void searchWithSession(SqlSession session){
         IItemDao dao=session.getMapper(IItemDao.class);
         Item i=dao.selectById(24);
         System.out.println(i);
@@ -43,6 +43,7 @@ public class Test {
 
     public static void main(String[] args) {
         //searchWithSession(session);
+        System.out.println(orderDao.selectById(6));
         System.out.println(orderDao.selectById(6));
     }
 

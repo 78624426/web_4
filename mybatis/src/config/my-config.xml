@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd" >
 <configuration>
+
     <!--配置properties文件位置	-->
     <properties resource=""></properties>
+    <settings>
+        <setting name="cacheEnabled" value="true"/>
+        <setting name="logImpl" value="org.apache.ibatis.logging.stdout.StdOutImpl"/>
+    </settings>
+
     <!--别名配置	-->
     <typeAliases>
         <typeAlias type="day1.entity.User" alias="abc"/>
