@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/jsp/jsp.iml" filepath="$PROJECT_DIR$/jsp/jsp.iml" />
       <module fileurl="file://$PROJECT_DIR$/log/log.iml" filepath="$PROJECT_DIR$/log/log.iml" />
       <module fileurl="file://$PROJECT_DIR$/mybatis/mybatis.iml" filepath="$PROJECT_DIR$/mybatis/mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/prePrloject/prePrloject.iml" filepath="$PROJECT_DIR$/prePrloject/prePrloject.iml" />
       <module fileurl="file://$PROJECT_DIR$/servlet/servlet.iml" filepath="$PROJECT_DIR$/servlet/servlet.iml" />
       <module fileurl="file://$PROJECT_DIR$/web_4.iml" filepath="$PROJECT_DIR$/web_4.iml" />
       <module fileurl="file://$PROJECT_DIR$/xml_json/xml_json.iml" filepath="$PROJECT_DIR$/xml_json/xml_json.iml" />
