@@ -45,18 +45,28 @@ public class ObjectFactory {
 
     public static Object getObject(String key){
         Object obj=objs.get(key);
-        if(obj instanceof Class){//obj是接口的类对象
-            SqlSession session= MyBatisUtil.getSession();
-            Object dao=session.getMapper((Class)obj);
-            Object daoProxy= Proxy.newProxyInstance(dao.getClass().getClassLoader(),
-                    new Class[]{(Class) obj},
-                    new InvocationHandler() {
-                        @Override
-                        public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-                            return null;
-                        }
-                    }
-            );
+        if(!(obj instanceof Class)){//obj是接口的类对象
+            return obj;
         }
+
+        //如果是dao对象，则使用动态代理
+        SqlSession session= MyBatisUtil.getSession();
+        Object dao=session.getMapper((Class)obj);
+        Object daoProxy= Proxy.newProxyInstance(dao.getClass().getClassLoader(),
+                new Class[]{(Class) obj},
+                new InvocationHandler() {
+                    @Override
+                    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+                        Object rs=null;
+                        try{
+                            rs=method.invoke(dao,args);
+                        }catch (Exception e){
+                            throw new RuntimeException("数据库访问失败",e);
+                        }
+                        return rs;
+                    }
+                }
+        );
+        return daoProxy;
     }
 }

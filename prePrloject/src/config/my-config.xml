@@ -11,9 +11,7 @@
 
     <!--别名配置	-->
     <typeAliases>
-        <typeAlias type="day1.entity.User" alias="abc"/>
-        <package name="day1.entity"/>
-        <package name="day2.demo2.entity"/>
+        <package name="entity"/>
     </typeAliases>
 
     <environments default="mybatis">
@@ -32,7 +30,7 @@
     </environments>
 
     <mappers>
-
+        <mapper resource="mapper/UserDaoMapper.xml"/>
     </mappers>
 
 </configuration>

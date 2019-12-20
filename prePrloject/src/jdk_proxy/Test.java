@@ -32,7 +32,7 @@ public class Test {
                 return method.invoke(dao,args);
             }
         });
-        proxy.add();
+
     }
 
 }
