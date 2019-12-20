@@ -1,5 +1,7 @@
 package jdk_proxy;
 
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
 public class Test {
@@ -23,7 +25,13 @@ public class Test {
         return proxy;
     }
         */
-        UserDao proxy= (UserDao) Proxy.newProxyInstance(c.getClassLoader(),c.getInterfaces(),new JdkProxy(dao));
+        //UserDao proxy= (UserDao) Proxy.newProxyInstance(c.getClassLoader(),c.getInterfaces(),new JdkProxy(dao));
+        UserDao proxy= (UserDao) Proxy.newProxyInstance(c.getClassLoader(),c.getInterfaces(),new InvocationHandler(){
+            public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+                System.out.println(method.getName()+"访问了数据库");
+                return method.invoke(dao,args);
+            }
+        });
         proxy.add();
     }
 

@@ -1,0 +1,2 @@
+ userDaoImpl=jdk_proxy.UserDaoImpl
+ userDao=jdk_proxy.UserDao
